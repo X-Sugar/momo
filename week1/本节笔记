@@ -1,0 +1,42 @@
+字符串格式化输出
+
+占位符：
+%s  s = string  字符串
+%d  d = digit   整数
+%f  f = float   浮点数，约等于小数（6位小数点）
+
+数据运算：
+数据类型
+数字
+    整数  int（integer）
+        整型
+        长整型（long）
+        in  python3 已经不区分整型和长整型，统一叫整型
+布尔值 只有两种状态：真
+                     假
+
+字符串
+列表、元组
+        查
+            索引（下标），都是从0开始
+            切片
+            .count 查某个元素出现的次数
+            .index 根据内容查找其对应的位置
+        增加
+           a.append() 追加
+           a.insert(index,""内容) 插入
+           a.extend 扩展
+        修改
+            a[index] = "新值"
+            a[start:end] = [a,b,c]
+        删除
+            remove("内容")
+            pop()
+            del a,del a[index]
+            a.clear() 清空
+        排序
+            sort()
+            reverse()
+
+continue 结束本次循环，继续下一次循环
+break 跳出整个当前循环
