@@ -2,7 +2,9 @@
 # _author: Administrator
 # Date: 2017/10/30 0030
 
+#操作系统
 import os
+
 
 # print(os.getcwd())  #显示当前路径
 
@@ -56,5 +58,5 @@ import os
 # os.environ['var']=str(var) //注意此处[]内得是 “字符串”
 # os.system('echo $var')
 
-# print(os.path.getsize(r'.//时间模块.py')) #获取文件大小，如果为目录，返回0
+print(os.path.getsize(r'.//时间模块.py')) #获取文件大小，如果为目录，返回0
 
