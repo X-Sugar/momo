@@ -58,3 +58,4 @@ import os
 # print(os.pathsep) #用于分割路径的分隔符
 #   20
 # print(os.environ) #显示环境变量
+print(os.pardir)
