@@ -35,6 +35,6 @@ config = configparser.ConfigParser()
 # config.add_section('server.com')    #添加
 # config.write(open('config.ini','a+'))   #添加
 #修改/添加
-config.read('config.ini')
-config.set('mysql','port','1111')
-config.write(open('config.ini','w'))
+config.read('config.ini')   #必须先读文件获取section
+config.set('mysql','port','1111')   #修改或者添加值
+config.write(open('config.ini','w'))    #写入
