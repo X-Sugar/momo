@@ -99,5 +99,47 @@ import re
 # ret=re.search('a\+','a+gj').group()
 # print(ret)
 
-ret=re.findall('\\\\c','sdfsdf\c')
-print(ret)
+# ret=re.findall('\\\\c','sdfsdf\c')
+# ret=re.findall(r'\\c','sdfsdf\c')
+# print(ret)
+
+#   ( )
+# ret=re.search('(as)+','sdsdfsdasas').group()
+# ret=re.search('(as)|3','3as').group()
+# print(ret)
+
+
+# ret=re.search('(?P<id>\d{3})/(?P<name>\w{3})','wwwweeee34ttt123/ooo')
+# print(ret.group())
+# print(ret.group('id'))
+# print(ret.group('name'))
+
+########################################################################################
+#正则表达式的方法
+# 1   findall()：所有结果都返回到一个列表里
+# 2   search()：返回匹配到的第一个对象（object），对象可以调用group() 返回结果
+# 3   match()：只在字符串开始（字符串开头）匹配，也返回对象，对象可以调用group() 返回结果
+
+# ret=re.match('asd','asdsdfsdasd')
+# print(ret.group())
+
+# 4   split()
+# ret=re.split('s','jojusoijl')
+# ret=re.split('[k,s]','aewrsloikuj')
+# print(ret)
+
+# 4   sub()     #替换
+# ret=re.sub('a..x','s..b','sdfsdfaffxxfg')
+# ret=re.sub('\d','xxx','sdf3sdf4',1)   #替换次数
+# print(ret)
+
+# 5   compile()
+ret=re.compile('\.com')
+rets=ret.findall('dfsdf.comserefsd')
+print(rets)
+
+
+##################################################################################
+
+# ret=re.finditer('\d','sdff3sfdf4s') #迭代器
+# print(next(ret).group())
