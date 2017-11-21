@@ -4,9 +4,6 @@
 
 a = ['susu','momo','lili','lucy','Cici']
 
-a.pop()
-print(a)
-
 # print(a)
 
 # print(a[1:3])   #切片
@@ -20,6 +17,7 @@ print(a)
 #增加
 # a.append('Kiki')    #在最后位置插入
 # a.insert(1,'Kiki')  #指定位置插入
+# a.extend([1,2,3,4]) #插入一个列表
 
 #修改
 # a[1] = 'Sugar'    #替换单个值
@@ -32,6 +30,7 @@ print(a)
 # del a[0]    #删除一个值
 # del  a  #直接删除a这个变量
 # print(a)
+# a.pop() #不带参数，删除最后一个值
 
 #index
 # print(a.index('lucy'))  #根据内容查找位置
@@ -46,3 +45,23 @@ print(a)
 # print(b)
 
 # print(len(b))
+
+#统计次数
+# print(a.reverse(1)) #列表中1出现的次数
+
+# collections.deque 被设计用于快速地从两端操作
+# from collections import deque
+#
+# b = deque(['susu','momo','lili','lucy','Cici'])
+# b.appendleft('susuuuuu')    #从左边添加
+# b.append('ssss')
+# b.pop()
+# b.popleft() #从左边删除
+# print(b)
+
+#小练习
+# mart=[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# a=[[row[i] for row in mart] for i in range(4)]    #方法1
+# print(a)
+
+# print(list(zip(*mart)))   #方法2 推荐

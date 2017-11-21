@@ -120,8 +120,8 @@ import re
 # 2   search()：返回匹配到的第一个对象（object），对象可以调用group() 返回结果
 # 3   match()：只在字符串开始（字符串开头）匹配，也返回对象，对象可以调用group() 返回结果
 
-# ret=re.match('asd','asdsdfsdasd')
-# print(ret.group())
+ret=re.match('asd','asdsdfsdasd')
+print(ret.group())
 
 # 4   split()
 # ret=re.split('s','jojusoijl')
@@ -134,9 +134,9 @@ import re
 # print(ret)
 
 # 5   compile()
-ret=re.compile('\.com')
-rets=ret.findall('dfsdf.comserefsd')
-print(rets)
+# ret=re.compile('\.com')
+# rets=ret.findall('dfsdf.comserefsd')
+# print(rets)
 
 
 ##################################################################################
