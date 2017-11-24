@@ -4,12 +4,11 @@
 
 import shelve
 
-f=shelve.open('shelve_test')
+f=shelve.open(r'shelve_test')
 
 # f['info']={'name':'susu','age':'18'}
 
 
-data=f.get('info')
+# data=f.get('info')
+data=f['info']
 print(data)
-
-

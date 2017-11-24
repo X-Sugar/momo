@@ -6,6 +6,7 @@ def hello():
     print('Hello')
 
 
+#测试代码，只在自己模块才有效
 if __name__=='__main__':
     hello()
 

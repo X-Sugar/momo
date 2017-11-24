@@ -4,6 +4,9 @@
 
 import random
 
+# a = random.choice(range(1,101))
+# print(a)
+
 #五位随机验证码
 def cod_num():
     nums=''
@@ -11,5 +14,4 @@ def cod_num():
         add=random.choice([random.randrange(10),chr(random.randrange(65,91))])
         nums+=str(add)
     print(nums)
-
 cod_num()

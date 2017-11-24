@@ -39,6 +39,9 @@ import re
 # ret=re.findall('a{1,3}b','absdfdf') #贪婪匹配
 # print(ret)
 
+#匹配3位以上的数字
+# ret=re.findall('[\d]{3,}','dsfd23424324324')
+# print(ret)
 
 # 结论： *等于｛0，正无穷｝  +等价于｛1，正无穷｝ ？等价于{0,1}
 
@@ -120,8 +123,8 @@ import re
 # 2   search()：返回匹配到的第一个对象（object），对象可以调用group() 返回结果
 # 3   match()：只在字符串开始（字符串开头）匹配，也返回对象，对象可以调用group() 返回结果
 
-ret=re.match('asd','asdsdfsdasd')
-print(ret.group())
+# ret=re.match('asd','asdsdfsdasd')
+# print(ret.group())
 
 # 4   split()
 # ret=re.split('s','jojusoijl')

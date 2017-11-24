@@ -168,3 +168,12 @@
 #
 # c= ''.join([a,b,d])
 # print(c)
+
+#list中取字典值
+# a=[{u'escapely_1':u'5505052'}]
+# b=a[0].get('escapely_1')
+# print(b)
+
+#不用get
+# dic={5:'555',2:'666',4:'444'}
+# print(dic[5])

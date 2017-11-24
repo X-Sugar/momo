@@ -39,8 +39,45 @@
 #
 # fib(100)
 
-mart=[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+# mart=[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 # a=[[row[i] for row in mart] for i in range(4)]
 # print(a)
 
-print(list(zip(*mart)))
+# print(list(zip(*mart)))
+
+# def fib(n):
+#     a,b=0,1
+#     while b<n:
+#         print(b,end=' ')
+#         a,b=b,a+b
+#     # print()
+# fib(100)
+
+# def fib2(n):
+#     result=[]
+#     a,b=0,1
+#     while b<n:
+#         result.append(b)
+#         a,b=b,a+b
+#     return result
+# print(fib2(100))
+#
+# import builtins
+# a=dir(builtins)
+# for i in a:
+#     print(i)
+
+std1 = { 'name': 'Michael', 'score': 98 }
+std2 = { 'name': 'Bob', 'score': 81 }
+
+class Student(object):
+
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+
+    def print_score(self):
+        print('%s: %s' % (self.name, self.score))
+
+bart=Student()
+print(bart)

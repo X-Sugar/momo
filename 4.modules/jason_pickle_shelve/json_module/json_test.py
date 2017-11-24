@@ -14,14 +14,12 @@
 
 
 
-#--------------------------------------------------------
-
+#---------------------------------------------dump
+#写法更简单了
 import json
 
 dic={'name':'susu','age':'18'}
 
-data=json.dumps(dic)
 f=open('json_test2','w',encoding='utf8')
-
 json.dump(dic,f)
 f.close()

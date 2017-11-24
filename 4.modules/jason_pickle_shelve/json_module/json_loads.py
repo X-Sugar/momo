@@ -16,7 +16,6 @@
 import json
 
 f=open('json_test2','r',encoding='utf8')
-
 data=json.load(f)
-
 print(data['name'])
+f.close()

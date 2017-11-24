@@ -48,7 +48,7 @@ import os
 #   17
 # print(os.path.dirname('e:\\momo\\os模块.py'))    #返回文件路径
 #   18
-# import time
+import time
 # a = os.stat('.\\生成器.py')  #查看文件状态
 # print(a.st_size)  #文件大小
 # print(time.ctime(a.st_ctime))

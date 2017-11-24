@@ -5,3 +5,5 @@
 import foo
 
 foo.hello()
+
+print(__name__)
