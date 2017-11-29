@@ -67,17 +67,9 @@
 # for i in a:
 #     print(i)
 
-std1 = { 'name': 'Michael', 'score': 98 }
-std2 = { 'name': 'Bob', 'score': 81 }
-
-class Student(object):
-
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-
-    def print_score(self):
-        print('%s: %s' % (self.name, self.score))
-
-bart=Student()
-print(bart)
+import sys
+for i in sys.argv:
+    print(i)
+a=sys.path
+print(a)
+print(dir(a))

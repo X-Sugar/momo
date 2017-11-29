@@ -1,25 +1,25 @@
 # __author:  Administrator
 # date:  2016/8/23
-#
-#
-# dic={1:'alex','age':35,'hobby':{'girl_name':'铁锤','age':45},'is_handsome':True}
+
+
+dic={1:'alex','age':35,'hobby':{'girl_name':'铁锤','age':45},'is_handsome':True}
 # dic={'name':'alex','age':35,'hobby':{'girl_name':'铁锤','age':45},'is_handsome':True}
-#
-# print(dic)
-#
+
+print(dic)
+
 # # 字典两大特点：无序，键唯一
-#
-#
+
+
 # # 字典的创建
 # a=list()
 # print(a)
-#
+
 # dic={'name':'alex'}
-#
+
 # dic1={}
 # dic2=dict((('name','alex'),))
 # print(dic2)
-#
+
 # dic3=dict([['name','alex'],])
 # print(dic3)
 #
@@ -43,11 +43,10 @@
 # dic3={'age': 18, 'name': 'alex', 'hobby': 'girl'}
 #
 # print(dic3['name'])
-#
 # print(list(dic3.keys()))
 # print(list(dic3.values()))
 # print(list(dic3.items()))
-#
+
 # li=[1,2,34,4]
 # li[2]=5
 # dic3={'age': 18, 'name': 'alex', 'hobby': 'girl'}
@@ -61,15 +60,9 @@
 # dic4.update(dic5)
 # print(dic4)
 # print(dic5)
-#
-#
-#
-#
-#
-#
-#
-#
-#
+
+
+
 # dic5 = {'name': 'alex', 'age': 18, 'class': 1}
 #
 # dic5.clear() # 清空字典

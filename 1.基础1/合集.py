@@ -29,8 +29,11 @@
 # print(a.issuperset(a))  #父集
 # print(b.issubset(a))    #子集
 
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
 
-
+a=[x for x in basket if x != 'pear']
+print(a)
 
 
 

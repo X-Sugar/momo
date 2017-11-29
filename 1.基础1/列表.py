@@ -32,8 +32,8 @@ a = ['susu','momo','lili','lucy','Cici']
 # print(a)
 # a.pop() #不带参数，删除最后一个值
 
-#index
-# print(a.index('lucy'))  #根据内容查找位置
+#index 返回列表中第一个值为 x 的元素的索引。如果没有匹配的元素就会返回一个错误。
+print(a.index('lucy'))  #根据内容查找位置
 
 # a.reverse()
 # print(a)
