@@ -1,0 +1,11 @@
+定义类并执行类中的方法：
+
+
+class 类名：
+    def 方法名(self,arg)
+        print(arg)
+        return 1
+
+中间人 = 类名()
+ret = 中间人.方法名(1)
+print(ret)
