@@ -4,9 +4,33 @@
 
 import random
 
-# a = random.choice(range(1,101))
-# print(a)
+# 用于生成一个指定范围内的随机符点数，两个参数其中一个是上限，一个是下限。如果a > b，则生成随机数
+print(random.uniform(10,20))
+print(random.uniform(20,10))
 
+# 用于生成一个指定范围内的整数。其中参数a是下限，参数b是上限，Python生成随机数
+print(random.randint(12,20))
+# print(random.randint(30,20))  #语句错误
+
+# 在1到100随机一个数
+print(random.choice(range(1,101)))
+print(random.choice('sdfsdfsdf123#$%^&*&*'))
+# 随机选取字符串：
+print(random.choice(['susu','momo','cici','lulu']))
+
+# 随机选取0到100间的偶数：
+print(random.randrange(0,101,2))
+
+# 随机浮点数：
+print(random.random())
+
+# 多个字符中选取特定数量的字符,返回一个列表：
+print(random.sample('aaaabcdefgh',3))
+
+# 洗牌：
+iteams = [1,2,3,4,5,6]
+random.shuffle(iteams)
+print(iteams)
 #五位随机验证码
 def cod_num():
     nums=''

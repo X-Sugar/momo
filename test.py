@@ -67,9 +67,20 @@
 # for i in a:
 #     print(i)
 
-import sys
-for i in sys.argv:
-    print(i)
-a=sys.path
-print(a)
-print(dir(a))
+# import sys
+# for i in sys.argv:
+#     print(i)
+# a=sys.path
+# print(a)
+# print(dir(a))
+
+
+
+import random
+# b=random.choice(range(1,3))
+# if b==1:
+#     print('吃鸡吃鸡！')
+# elif b==2:
+#     print('吃个锤子！')
+
+print(random.choice(['吃鸡吃鸡！','吃个锤子！']))
