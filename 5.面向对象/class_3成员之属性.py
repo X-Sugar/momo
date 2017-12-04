@@ -1,7 +1,7 @@
 # -*- coding=utf-8 -*-
 # _author: Administrator
 # Date: 2017/12/4 0004
-
+"""
 class Foo:
     def __init__(self):
         self.name = 'a'
@@ -30,9 +30,9 @@ obj.per     # 实际是方法，访问是模仿字段
 obj.per=123
 
 del obj.per
-
+"""
 # ---------------------------------------------------------------
-
+"""
 class Pergination:
     def __init__(self,current_page):
         try:
@@ -60,3 +60,15 @@ while True:
     p = input('请输入要查看的页码：')
     nums = Pergination(p)
     print(li[nums.start:nums.end])
+ """
+# ---------------------------------------------------------------
+
+class Foo:
+
+    def f1(self):
+        return 1
+    per = property(fget=f1)     #方法跟下面一样
+
+    # @property
+    # def per(self):
+    #     return 12
