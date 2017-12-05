@@ -19,13 +19,14 @@ class Foo:
         print('classmd')
         print(cls)
 
-obj=Foo()
-obj.bar()
+# obj=Foo()
+# obj.bar()  # ---> Foo().bar()
 
 Foo.sta()
-Foo.sta2(1,2)
 
-Foo.classmd()
+# Foo.sta2(1,2)
+
+# Foo.classmd()
 
 # 应用场景：
 # 如果对象中需要保存一些值，执行某些功能时，需要使用对象中的值 --》 普通发方法

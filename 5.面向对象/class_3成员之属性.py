@@ -73,7 +73,7 @@ class Foo:
     def f3(self):
         print('del')
 
-    per = property(fget=f1,fset=f2,fdel=f3,doc='adfasdfasdfasdf')
+    per = property(fget=f1,fset=f2,fdel=f3,doc='adfasdfasdfasdf')       # doc只做解释作用
 
     # @property
     # def per(self):
