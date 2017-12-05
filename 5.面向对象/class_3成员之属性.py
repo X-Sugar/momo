@@ -66,9 +66,24 @@ while True:
 class Foo:
 
     def f1(self):
-        return 1
-    per = property(fget=f1)     #方法跟下面一样
+        return 123
+
+    def f2(self,v):
+        print(v)
+    def f3(self):
+        print('del')
+
+    per = property(fget=f1,fset=f2,fdel=f3,doc='adfasdfasdfasdf')
 
     # @property
     # def per(self):
-    #     return 12
+    #     return 123
+
+
+obj = Foo()
+# ret = obj.per
+# print(ret)
+
+# obj.per = 123456
+
+del obj.per
