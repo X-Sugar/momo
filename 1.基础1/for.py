@@ -33,3 +33,31 @@ import math
 #     if not math.isnan(value):
 #         filtered_data.append(value)
 # print(filtered_data)
+
+#打印三角形
+
+# for i in range(10):
+#     for a in range(i):
+#         print('*',end=" ")
+#
+#     for b in range(i,10):
+#         print('#',end=' ')
+#     print('')
+
+
+for i in range(10):
+    for j in range(0,10-i):
+        print(end=' ')
+    for k in range(10-i,10):
+        print('*',end=' ')
+    print('')
+
+
+for i in range(10):
+    for j in range(0,i):
+        print(end=" ")
+
+    for j in range(i,10):
+        print("$", end=" ")
+
+    print("")
