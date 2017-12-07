@@ -23,4 +23,23 @@ import sys
 #     print("Unexpected error:", sys.exc_info()[0])
 #     raise
 
-raise NameError('HiThere')  #抛出异常
+
+try:
+    x=int(input("input a number:"))
+except Exception as e:  # Exception 所有错误
+    print(e)
+    print('xxx')
+
+
+try:
+    x=int(input('a number:'))
+except IndexError as e:
+    print('IndexError:',e)
+except ValueError as e:
+    print('ValueError',e)
+else:       # 不出错，执行else
+    print('else')
+finally:        # 不管出不出错，最后都执行
+    print('......')
+
+# raise NameError('HiThere')  #抛出异常

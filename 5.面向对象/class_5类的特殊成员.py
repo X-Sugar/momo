@@ -39,7 +39,7 @@ class Foo:
         pass
 
     def __int__(self):
-        return 1
+        return 1    #只能返回数字
 
     def __str__(self):
         return 'susu'

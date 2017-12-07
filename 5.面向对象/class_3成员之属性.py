@@ -52,10 +52,12 @@ class Pergination:
         val= self.page * 10
         return val
 
+# 定义一个列表
 li = []
 for i in range(1000):
     li.append(i)
 
+# 切片
 while True:
     p = input('请输入要查看的页码：')
     nums = Pergination(p)
@@ -70,6 +72,7 @@ class Foo:
 
     def f2(self,v):
         print(v)
+
     def f3(self):
         print('del')
 
