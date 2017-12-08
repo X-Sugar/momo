@@ -96,25 +96,11 @@
 # obj = Foo('susu',18)
 # print(obj)  # print(str(obj.name),str(obj.age))
 
+class NetworkError(RuntimeError):
+    def __init__(self,arg):
+        self.aargs=arg
 
-class Foo:
-    def __init__(self):
-        pass
-
-    def __int__(self):
-        return 123
-
-    def __str__(self):
-        return 'susu'
-
-obj = Foo()
-
-print(obj,type(obj))
-
-# int,对象，自动执行对象的__int__方法，并将返回值赋值给int对象
-r = int(obj)
-print(r)
-
-i = str(obj)
-print(i)
-
+try:
+    raise NetworkError("Bad hostname")
+except NetworkError as e:
+    print(e.args)

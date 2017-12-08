@@ -15,7 +15,11 @@
 
 import json
 
-f=open('json_test2','r',encoding='utf8')
-data=json.load(f)
-print(data['name'])
-f.close()
+# f=open('json_test2','r',encoding='utf8')
+# data=json.load(f)
+# print(data['name'])
+# f.close()
+
+with open('json_test2','r',encoding='utf8') as f:
+    data=json.load(f)
+    print(data['name'])
