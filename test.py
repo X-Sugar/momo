@@ -96,11 +96,35 @@
 # obj = Foo('susu',18)
 # print(obj)  # print(str(obj.name),str(obj.age))
 
-class NetworkError(RuntimeError):
-    def __init__(self,arg):
-        self.aargs=arg
+# class NetworkError(RuntimeError):
+#     def __init__(self,arg):
+#         self.aargs=arg
+#
+# try:
+#     raise NetworkError("Bad hostname")
+# except NetworkError as e:
+#     print(e.args)
 
-try:
-    raise NetworkError("Bad hostname")
-except NetworkError as e:
-    print(e.args)
+
+class Foo:
+
+    __v = None
+
+    @classmethod
+    def get_instance(cls):
+        if cls.__v:
+            return cls.__v
+        else:
+            cls.__v = Foo()
+            return cls.__v
+
+    def show(self,name):
+        self.name=name
+# 不要在使用 类()
+obj1 = Foo.get_instance()
+print(obj1)
+obj2 = Foo.get_instance()
+print(obj2)
+Foo.show(val='ssss')
+obj3 = Foo.get_instance()
+print(obj3)

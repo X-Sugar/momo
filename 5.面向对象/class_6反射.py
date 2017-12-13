@@ -2,14 +2,15 @@
 # _author: Administrator
 # Date: 2017/12/8 0008
 
-class Foo:
-    def __init__(self,name,age):
-        self.name=name
-        self.age=age
+# class Foo:
+#     def __init__(self,name,age):
+#         self.name=name
+#         self.age=age
+#
+#     def show(self):
+#         return "%s---%s" % (self.name,self.age)
+# obj = Foo('susu',18)
 
-    def show(self):
-        return "%s---%s" % (self.name,self.age)
-obj = Foo('susu',18)
 # print(obj.name)     # 方法一
 
 # print(obj.__dict__['name'])     # 方法二
@@ -26,3 +27,16 @@ obj = Foo('susu',18)
 # delattr(obj,'name')             # 4.删除成员
 # obj.name
 
+import su
+
+r1 = getattr(su,'name')
+print(r1)
+
+r2 = getattr(su,'func')
+result =r2()
+print(result)
+
+r3 = getattr(su,'Foo')
+print(r3)
+obj = r3()
+print(obj.name)
