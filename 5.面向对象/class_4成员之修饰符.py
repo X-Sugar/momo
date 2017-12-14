@@ -71,7 +71,7 @@ class F:
         self.ge = 'boy'
         self.__ge = 'girl'
 
-    @property
+    @property       # 子类不能继承，只能定义共有的
     def gen(self):
         return self.__ge
 

@@ -90,9 +90,9 @@ class Foo:
 
         # return 123    #返回什么输出什么
         # return 'susuuuuu'
-        # return Foo('cici',20)   #<__main__.Foo object at 0x0000000001E88668> <class '__main__.Foo'>
-        return Foo(obj1.name,other.age)
-
+        # return Foo('cici',20)   # <__main__.Foo object at 0x0000000001E88668> <class '__main__.Foo'>
+        # return Foo(obj1.name,other.age)
+        return self.age + other.age
 obj1 = Foo('susu',19)
 obj2 = Foo('momo',20)
 
@@ -179,6 +179,8 @@ li[1:4:2]
 
 # ----------------------------------------------------
 # __iter__
+
+# """
 class Foo:
 
     def __init__(self,name,age):
@@ -187,7 +189,7 @@ class Foo:
 
     def __iter__(self):
         # return iter([11,22,33])
-        return iter([self.name,self.age])
+        return iter([self.name,self.age])   # 返回什么循环什么
 li = Foo('susu',18)
 # 如果类中有__iter__方法，对象 -》 可迭代对象
 # 对象.__iter__()的返回值：迭代器
@@ -197,3 +199,4 @@ li = Foo('susu',18)
 # 2.循环上一部中返回的对象
 for i in li:
     print(i)
+# """
