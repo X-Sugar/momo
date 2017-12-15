@@ -1,11 +1,11 @@
 # -*- coding=utf-8 -*-
 # _author: Administrator
 # Date: 2017/11/6 0006
-#http://www.cnblogs.com/yuanchenqi/articles/5732581.html
+# http://www.cnblogs.com/yuanchenqi/articles/5732581.html
 
-#引入正则：模糊匹配
+# 引入正则：模糊匹配
 
-#元字符： . ^   $   *   +   ?   { }     [ ]     |   ( )     \
+# 元字符： . ^   $   *   +   ?   { }     [ ]     |   ( )     \
 import re
 
 #   .   通配符：匹配一个字符
@@ -39,7 +39,7 @@ import re
 # ret=re.findall('a{1,3}b','absdfdf') #贪婪匹配
 # print(ret)
 
-#匹配3位以上的数字
+# 匹配3位以上的数字
 # ret=re.findall('[\d]{3,}','dsfd23424324324')
 # print(ret)
 
@@ -64,8 +64,8 @@ import re
 
 
 #   \
-#反斜杠后边跟元字符去除特殊功能
-#反斜杠好偶跟普通字符实现特殊功能
+# 反斜杠后边跟元字符去除特殊功能
+# 反斜杠好偶跟普通字符实现特殊功能
 
 # \d  匹配任何十进制数；它相当于类 [0-9]。
 # \D 匹配任何非数字字符；它相当于类 [^0-9]。
@@ -90,7 +90,7 @@ import re
 
 ################################################################
 
-#匹配出第一个满足条件的结果
+# 匹配出第一个满足条件的结果
 # ret=re.search('sb','sdfsgsdgssbfdfe')
 # # ret=re.search('sb','sdfsgsdgssbfdfe').group()
 # print(ret)
@@ -118,7 +118,7 @@ import re
 # print(ret.group('name'))
 
 ########################################################################################
-#正则表达式的方法
+# 正则表达式的方法
 # 1   findall()：所有结果都返回到一个列表里
 # 2   search()：返回匹配到的第一个对象（object），对象可以调用group() 返回结果
 # 3   match()：只在字符串开始（字符串开头）匹配，也返回对象，对象可以调用group() 返回结果

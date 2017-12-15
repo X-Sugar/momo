@@ -26,3 +26,29 @@ import time
 
 # import datetime
 # print(datetime.datetime.now())  #2017-10-26 22:00:24.462707
+
+
+from datetime import date
+
+now = date.today()
+print(now)
+print(now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B."))
+
+import reprlib
+
+ret = reprlib.repr(set('supercalifragilisticexpialidocious'))
+print(ret)
+
+import pprint
+
+t = [[[['black', 'cyan'], 'white', ['green', 'red']], [['magenta','yellow'], 'blue']]]
+
+pprint.pprint(t,width=30)
+
+import logging
+
+logging.debug()
+logging.info()
+logging.warning()
+logging.error()
+logging.critical()

@@ -106,25 +106,57 @@
 #     print(e.args)
 
 
-class Foo:
+# class Foo:
+#
+#     __v = None
+#
+#     @classmethod
+#     def get_instance(cls):
+#         if cls.__v:
+#             return cls.__v
+#         else:
+#             cls.__v = Foo()
+#             return cls.__v
+#
+#     def show(self,name):
+#         self.name=name
+# # 不要在使用 类()
+# obj1 = Foo.get_instance()
+# print(obj1)
+# obj2 = Foo.get_instance()
+# print(obj2)
+# Foo.show(val='ssss')
+# obj3 = Foo.get_instance()
+# print(obj3)
 
-    __v = None
+# from datetime import date
+#
+# now = date.today()
+# print(now)
+#
+# print(now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B."))
 
-    @classmethod
-    def get_instance(cls):
-        if cls.__v:
-            return cls.__v
-        else:
-            cls.__v = Foo()
-            return cls.__v
+import cgi,cgitb
 
-    def show(self,name):
-        self.name=name
-# 不要在使用 类()
-obj1 = Foo.get_instance()
-print(obj1)
-obj2 = Foo.get_instance()
-print(obj2)
-Foo.show(val='ssss')
-obj3 = Foo.get_instance()
-print(obj3)
+form = cgi.FieldStorage()
+
+if form.getvalue('maths'):
+    math_flag = 'ON'
+else:
+    math_flag = 'OFF'
+
+if form.getvalue('physics'):
+    physics_flag = 'ON'
+else:
+    physics_flag = 'OFF'
+
+print ("Content-type:text/html\r\n\r\n")
+print ("<html>")
+print ("<head>")
+print ("<title>Checkbox - Third CGI Program</title>")
+print ("</head>")
+print ("<body>")
+print ("<h2> CheckBox Maths is : %s</h2>" % math_flag)
+print ("<h2> CheckBox Physics is : %s</h2>" % physics_flag)
+print ("</body>")
+print ("</html>")

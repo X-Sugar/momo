@@ -21,7 +21,7 @@ import os
 # os.mkdir()  # 创建目录，只能创建一层
 # os.makedirs()   # 递归创建目录
 #   7
-# print(os.path.isfile('.//os模块.py')) # 判断指定对象是否为文件。是返回True,否则False
+# print(os.path.isfile('.//os_module.py')) # 判断指定对象是否为文件。是返回True,否则False
 #   8
 # print(os.path.isdir())  # 判断指定对象是否为目录。是True,否则False。
 #   9
@@ -42,11 +42,11 @@ import os
 #   14
 # print(os.path.abspath())    # 获取绝对路径
 #   15
-# print(os.path.join(r'c:\Users',r'os模块.py'))   # 连接目录和文件名
+# print(os.path.join(r'c:\Users',r'os_module.py'))   # 连接目录和文件名
 #   16
-# print(os.path.basename('e:/momo/os模块.py'))  # 返回文件名
+# print(os.path.basename('e:/momo/os_module.py'))  # 返回文件名
 #   17
-# print(os.path.dirname('e:\\momo\\os模块.py'))    # 返回文件路径
+# print(os.path.dirname('e:\\momo\\os_module.py'))    # 返回文件路径
 #   18
 # import time
 # a = os.stat('.\\生成器.py')  # 查看文件状态
