@@ -6,7 +6,9 @@ import socket
 
 sk=socket.socket()
 
-sk.connect()
-address=('127.0.0.1',9000)
-address=
-sk.connect()
+address=('127.0.0.1',8000)
+
+sk.connect(address)
+print(sk)
+
+#<socket.socket fd=380, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 11244), raddr=('127.0.0.1', 8000)>
