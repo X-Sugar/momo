@@ -191,7 +191,7 @@ class Foo:
         # return iter([11,22,33])
         return iter([self.name,self.age])   # 返回什么循环什么
 li = Foo('susu',18)
-# 如果类中有__iter__方法，对象 -》 可迭代对象
+# 如果类中有__iter__方法，对象 -》 可  迭代对象
 # 对象.__iter__()的返回值：迭代器
 # for循环，迭代器，next
 # for循环，可迭代对象，对象.__iter()，迭代器，next
