@@ -67,13 +67,13 @@ import re
 # 反斜杠后边跟元字符去除特殊功能
 # 反斜杠好偶跟普通字符实现特殊功能
 
-# \d  匹配任何十进制数；它相当于类 [0-9]。
-# \D 匹配任何非数字字符；它相当于类 [^0-9]。
-# \s  匹配任何空白字符；它相当于类 [ \t\n\r\f\v]。
-# \S 匹配任何非空白字符；它相当于类 [^ \t\n\r\f\v]。
-# \w 匹配任何字母数字字符；它相当于类 [a-zA-Z0-9_]。
+# \d 匹配任何十进制数；它相当于类 [0-9]
+# \D 匹配任何非数字字符；它相当于类 [^0-9]
+# \s 匹配任何空白字符；它相当于类 [ \t\n\r\f\v]
+# \S 匹配任何非空白字符；它相当于类 [^ \t\n\r\f\v]
+# \w 匹配任何字母数字字符；它相当于类 [a-zA-Z0-9_]
 # \W 匹配任何非字母数字字符；它相当于类 [^a-zA-Z0-9_]
-# \b  匹配一个特殊字符边界，比如空格 ，&，＃等
+# \b 匹配一个特殊字符边界，比如空格 ，&，＃等
 
 
 # ret=re.findall('\d{11}','fsdfsfs1231234124535456345')
@@ -92,9 +92,11 @@ import re
 
 # 匹配出第一个满足条件的结果
 # ret=re.search('sb','sdfsgsdgssbfdfe')
-# # ret=re.search('sb','sdfsgsdgssbfdfe').group()
-# print(ret)
 # print(ret.group())
+
+# ret=re.search('sb','sdfsgsdgssbfdfe').group()
+# print(ret)
+
 
 # ret=re.search('a\.','a.sdfd').group()
 # print(ret)
@@ -108,11 +110,11 @@ import re
 
 #   ( )
 # ret=re.search('(as)+','sdsdfsdasas').group()
-# ret=re.search('(as)|3','3as').group()
+# ret=re.search('(as)|3|4','sdf4as3').group()   # 任意匹配一个，从字符串左边开始匹配
 # print(ret)
 
 
-# ret=re.search('(?P<id>\d{3})/(?P<name>\w{3})','wwwweeee34ttt123/ooo')
+# ret=re.search('(?P<id>\d{3})/(?P<name>\w{3})','wwwweeee34ttt123/oookk')
 # print(ret.group())
 # print(ret.group('id'))
 # print(ret.group('name'))
@@ -133,7 +135,7 @@ import re
 
 # 4   sub()     #替换
 # ret=re.sub('a..x','s..b','sdfsdfaffxxfg')
-# ret=re.sub('\d','xxx','sdf3sdf4',1)   #替换次数
+# ret=re.sub('\d','xxx','sdf3sdf4',2)   #替换次数
 # print(ret)
 
 # 5   compile()
@@ -146,3 +148,5 @@ import re
 
 # ret=re.finditer('\d','sdff3sfdf4s') #迭代器
 # print(next(ret).group())
+# print(next(ret).group())
+

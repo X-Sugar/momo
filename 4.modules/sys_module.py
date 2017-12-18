@@ -16,13 +16,13 @@ import sys
 # print(sys.platform)
 # 跨平台执行命令
 import os
-if sys.platform=='win32':
-    os.system('dir')
-else:
-    os.system('ls')
+# if sys.platform=='win32':
+#     os.system('dir')
+# else:
+#     os.system('ls')
 
 
 #   5.
-# print(sys.path)   #path是一个目录列表，供Python从中查找第三方扩展模块
+print(sys.path)   #path是一个目录列表，供Python从中查找第三方扩展模块
 #   6
-# print(sys.builtin_module_names) # 返回一个列表，包含内建模块的名字
+print(sys.builtin_module_names) # 返回一个列表，包含内建模块的名字
