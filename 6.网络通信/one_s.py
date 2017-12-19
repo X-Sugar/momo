@@ -6,7 +6,7 @@ import socket
 
 sk = socket.socket()
 sk.bind(('127.0.0.1',8888))
-sk.listen(5)
+sk.listen(3)
 
 conn,addr=sk.accept()
 
