@@ -13,7 +13,12 @@ while True:
         break
     sk.send(bytes(send_data, 'utf8'))
 
-    recv_data = str(sk.recv(1024),'gbk')
-    print('接收的消息：%s' % recv_data)
+    recv_len = int(str(sk.recv(1024),'utf8'))
+    print('命令字节大小：%s' % recv_len)
 
+    recv_data = bytes()
+    while len(recv_data) != recv_len:
+        recv = sk.recv(1024)
+        recv_data += recv
+    print(str(recv_data,'gbk'))
 sk.close()

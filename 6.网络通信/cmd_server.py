@@ -23,7 +23,8 @@ while True:
 
         obj = subprocess.Popen(recv_data,shell=True,stdout=subprocess.PIPE)
         send_data = obj.stdout.read()
-        # send_data = input('请输入发送内容：')
+        send_len=bytes(str(len(send_data)),'utf8')
+        conn.send(send_len)
         conn.send(send_data)
 
 sk.close()
