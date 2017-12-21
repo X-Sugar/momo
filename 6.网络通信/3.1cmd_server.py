@@ -7,6 +7,7 @@ import socket,subprocess
 sk = socket.socket()
 sk.bind(('127.0.0.1',8888))
 sk.listen(3)
+
 while True:
     conn,addr=sk.accept()
     while True:
@@ -23,8 +24,13 @@ while True:
 
         obj = subprocess.Popen(recv_data,shell=True,stdout=subprocess.PIPE)
         send_data = obj.stdout.read()
+
         send_len=bytes(str(len(send_data)),'utf8')
-        conn.send(send_len)
+        print('接受字节长度：%s' % str(send_len,'utf8'))
+        conn.send(send_len)     # 粘包现象
+
+        conn.recv(1024)     # 解决粘包
+
         conn.send(send_data)
 
 sk.close()

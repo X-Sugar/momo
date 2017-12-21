@@ -14,6 +14,8 @@ while True:
     sk.send(bytes(send_data, 'utf8'))
 
     recv_len = int(str(sk.recv(1024),'utf8'))
+
+    sk.sendall(bytes('OK',encoding='utf8'))     # 隔断，解决粘包
     print('命令字节大小：%s' % recv_len)
 
     recv_data = bytes()
