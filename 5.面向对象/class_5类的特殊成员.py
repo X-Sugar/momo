@@ -17,7 +17,7 @@
 """
 class F:
     def __init__(self):
-        print('123')
+        print('数据连接')
 
     def __call__(self, *args, **kwargs):
         print('call')
@@ -88,7 +88,7 @@ class Foo:
         # self = obj1('susu',19)
         # self = obj2('momo',20)
 
-        # return 123    #返回什么输出什么
+        # return 数据连接    #返回什么输出什么
         # return 'susuuuuu'
         # return Foo('cici',20)   # <__main__.Foo object at 0x0000000001E88668> <class '__main__.Foo'>
         # return Foo(obj1.name,other.age)
@@ -172,7 +172,7 @@ class Foo:
         print(key)
 
 li = Foo('susu',18)
-li[123]
+li[数据连接]
 li[1:4:2]
 
 """

@@ -136,27 +136,61 @@
 #
 # print(now.strftime("%m-%d-%y. %d %b %Y is a %A on the %d day of %B."))
 
-import cgi,cgitb
+# import threading
+#
+# class mythreading(threading.Thread):
+#     def run(self):
+#         for i in range(1,5):
+#             print(i)
+#
+# ma = mythreading()
+# mb = mythreading()
+# ma.start()
+# mb.start()
 
-form = cgi.FieldStorage()
 
-if form.getvalue('maths'):
-    math_flag = 'ON'
-else:
-    math_flag = 'OFF'
+# import threading,time
+#
+# class mythread(threading.Thread):
+#     def run(self):
+#         self.i = 1
+#         print(self.i)
+#         self.i = self.i + 1
+#         time.sleep(1)
+#         print(self.i)
+#         time.sleep(1)
+#
+# if __name__=='__main__':
+#     ta = mythread()
+#     ta.start()
+#     ta.join()
+#     print('main thread over')
 
-if form.getvalue('physics'):
-    physics_flag = 'ON'
-else:
-    physics_flag = 'OFF'
+import threading,time
 
-print ("Content-type:text/html\r\n\r\n")
-print ("<html>")
-print ("<head>")
-print ("<title>Checkbox - Third CGI Program</title>")
-print ("</head>")
-print ("<body>")
-print ("<h2> CheckBox Maths is : %s</h2>" % math_flag)
-print ("<h2> CheckBox Physics is : %s</h2>" % physics_flag)
-print ("</body>")
-print ("</html>")
+def music(func):
+    for i in range(2):
+        print(time.ctime())
+        time.sleep(5)
+        print(func,time.ctime())
+
+def move(func):
+    for i in range(2):
+        print(time.ctime())
+        time.sleep(2)
+        print(func,time.ctime())
+
+
+threads = []
+t1 = threading.Thread(target=music,args=('七里香',))
+threads.append(t1)
+t2 = threading.Thread(target=move,args=('闻花未名',))
+threads.append(t2)
+
+print(threads)
+
+if __name__ == '__main__':
+    for t in threads:
+        t.setDaemon(True)
+        t.start()
+

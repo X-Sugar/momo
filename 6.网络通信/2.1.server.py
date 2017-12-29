@@ -2,6 +2,7 @@
 # _author: Administrator
 # Date: 2017/12/19 0019
 
+# 一直通信
 import socket
 
 sk = socket.socket()

@@ -27,7 +27,7 @@ print(obj.show())
 # -----------------------------------------------
 """
 class Foo:
-    __v = '123'
+    __v = '数据连接'
 
     def __init__(self):
         pass
@@ -50,7 +50,7 @@ print(Foo.stat())
 """
 class Foo:
     def f1(self):
-        return 123
+        return 数据连接
 
     def __f2(self):
         return 456

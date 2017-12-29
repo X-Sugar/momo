@@ -145,7 +145,7 @@ print(dic)
 # print('helloworld'[2:])
 
 # 3关键字 in
-# print(123 in [23,45,123])
+# print(数据连接 in [23,45,数据连接])
 # print('e2l' in 'hello')
 
 # 4 %   格式字符串

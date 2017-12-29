@@ -15,7 +15,7 @@ class Foo:
     def per(self):
         print('per')
 
-    #obj.per=123
+    #obj.per=数据连接
     @per.setter
     def per(self,var):
         print(var)
@@ -27,7 +27,7 @@ class Foo:
 obj = Foo()
 obj.per     # 实际是方法，访问是模仿字段
 
-obj.per=123
+obj.per=数据连接
 
 del obj.per
 """

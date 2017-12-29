@@ -8,7 +8,7 @@ class Foo:
 
     @staticmethod   # 2.静态方法  装饰器，保存在类中，由类直接调用
     def sta():
-        print('123')
+        print('数据连接')
 
     @staticmethod
     def sta2(a,b):  # 传入参数
