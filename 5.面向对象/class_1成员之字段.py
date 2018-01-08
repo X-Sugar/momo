@@ -9,7 +9,7 @@ class Province:
 
 # print(Province.country)
 jiangxi = Province('江西')
-#jiangxi.name = "江西西"    # 把对象的值修改了
+# jiangxi.name = "江西西"    # 把对象的值修改了
 print(jiangxi.name)
 print(Province.country,jiangxi.name)
 print(jiangxi.country)  # 通过对象访问静态字段

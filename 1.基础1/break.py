@@ -2,11 +2,11 @@
 # _author: Administrator
 # Date: 2017/9/5 0005
 
-# for i in range(1,10):
-#     print(i)
-#     i += 1
-#     if i > 5:
-#         break
+for i in range(1,10):
+    print(i,end=' ')
+    i += 1
+    if i > 5:
+        break
 #######################################################
 
 # _user = "Sugar"

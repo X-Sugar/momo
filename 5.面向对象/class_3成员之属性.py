@@ -27,12 +27,12 @@ class Foo:
 obj = Foo()
 obj.per     # 实际是方法，访问是模仿字段
 
-obj.per=数据连接
+obj.per='数据连接'
 
 del obj.per
 """
 # ---------------------------------------------------------------
-"""
+# """
 class Pergination:
     def __init__(self,current_page):
         try:
@@ -62,8 +62,10 @@ while True:
     p = input('请输入要查看的页码：')
     nums = Pergination(p)
     print(li[nums.start:nums.end])
- """
+ # """
 # ---------------------------------------------------------------
+
+"""
 
 class Foo:
 
@@ -90,3 +92,5 @@ obj = Foo()
 # obj.per = 123456
 
 del obj.per
+
+"""

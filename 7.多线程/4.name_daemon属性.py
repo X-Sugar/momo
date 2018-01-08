@@ -35,7 +35,7 @@ def main():
     ta = mythread()
     ta.daemon = True
     ta.start()
-    print('main thread over')
+    print('main thread over',ta.name)
 
 if __name__ == '__main__':
     main()

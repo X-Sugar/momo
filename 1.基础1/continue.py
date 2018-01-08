@@ -2,10 +2,10 @@
 # _author: Administrator
 # Date: 2017/9/5 0005
 
-# for i in range(10):
-#     if i < 5 :
-#         continue
-#     print(i)
+for i in range(10):
+    if i > 5 :
+        continue
+    print(i,end=' ')
 ################################################################
 # i = 1
 # while i < 10:

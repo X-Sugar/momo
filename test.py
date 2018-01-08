@@ -166,31 +166,84 @@
 #     ta.join()
 #     print('main thread over')
 
-import threading,time
+# import threading,time
+#
+# def music(func):
+#     for i in range(2):
+#         print(time.ctime())
+#         time.sleep(5)
+#         print(func,time.ctime())
+#
+# def move(func):
+#     for i in range(2):
+#         print(time.ctime())
+#         time.sleep(2)
+#         print(func,time.ctime())
+#
+#
+# threads = []
+# t1 = threading.Thread(target=music,args=('七里香',))
+# threads.append(t1)
+# t2 = threading.Thread(target=move,args=('闻花未名',))
+# threads.append(t2)
+#
+# print(threads)
+#
+# if __name__ == '__main__':
+#     for t in threads:
+#         t.setDaemon(True)
+#         t.start()
 
-def music(func):
-    for i in range(2):
-        print(time.ctime())
-        time.sleep(5)
-        print(func,time.ctime())
+# FTP服务器 pip3 install pyftpdlib
 
-def move(func):
-    for i in range(2):
-        print(time.ctime())
-        time.sleep(2)
-        print(func,time.ctime())
+# from pyftpdlib.authorizers import DummyAuthorizer
+# from pyftpdlib.handlers import FTPHandler
+# from pyftpdlib.servers import FTPServer
+#
+# authorizer = DummyAuthorizer()
+# authorizer.add_user('root','root','.',perm="elradfmw")
+# handler = FTPHandler
+# handler.authorizer = authorizer
+# server = FTPServer(("192.168.1.2",21),handler)
+# server.serve_forever()
 
 
-threads = []
-t1 = threading.Thread(target=music,args=('七里香',))
-threads.append(t1)
-t2 = threading.Thread(target=move,args=('闻花未名',))
-threads.append(t2)
+import random,time,queue,threading
 
-print(threads)
+q = queue.Queue()
 
-if __name__ == '__main__':
-    for t in threads:
-        t.setDaemon(True)
-        t.start()
+class Name:
+    def __init__(self,name):
+        self.name = name
+
+class Producer(threading.Thread,Name):
+    def run(self):
+        Name.__init__(self)
+        count = 0
+        while count < 20:
+            time.sleep(random.randrange(3))
+            q.put(count)
+            print("生产者%s已经生产了%s个包子" % (self.name,count))
+            count += 1
+
+class Consumer(threading.Thread,Name):
+    def run(self):
+        Name.__init__(self)
+        count = 0
+        while count < 20:
+            time.sleep(random.randrange(4))
+            if not q.empty():
+                data = q.get()
+                print(data)
+                print("%s吃了%s个包子" % (self.name,count))
+            else:
+                print("没有包子了！")
+            count += 1
+
+# p1 = threading.Thread(target=Producer,args=('A'))
+# c1 = threading.Thread(target=Consumer,args=('B'))
+# p1.start()
+# c1.start()
+a = Producer()
+
 
