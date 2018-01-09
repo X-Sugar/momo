@@ -207,43 +207,22 @@
 # server = FTPServer(("192.168.1.2",21),handler)
 # server.serve_forever()
 
+import pickle
 
-import random,time,queue,threading
-
-q = queue.Queue()
-
-class Name:
+class School:
     def __init__(self,name):
         self.name = name
 
-class Producer(threading.Thread,Name):
-    def run(self):
-        Name.__init__(self)
-        count = 0
-        while count < 20:
-            time.sleep(random.randrange(3))
-            q.put(count)
-            print("生产者%s已经生产了%s个包子" % (self.name,count))
-            count += 1
+    def save(self):
+        f=open('xxxx','wb')
+        pickle.dump(self,f)
+        f.close()
 
-class Consumer(threading.Thread,Name):
-    def run(self):
-        Name.__init__(self)
-        count = 0
-        while count < 20:
-            time.sleep(random.randrange(4))
-            if not q.empty():
-                data = q.get()
-                print(data)
-                print("%s吃了%s个包子" % (self.name,count))
-            else:
-                print("没有包子了！")
-            count += 1
+s1 = School('shanghai')
+s1.save()
 
-# p1 = threading.Thread(target=Producer,args=('A'))
-# c1 = threading.Thread(target=Consumer,args=('B'))
-# p1.start()
-# c1.start()
-a = Producer()
-
-
+s2 = School('beijing')
+s2.save()
+import uuid
+print(uuid.uuid1())
+print(uuid.uuid1())
