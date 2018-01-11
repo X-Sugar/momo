@@ -32,7 +32,7 @@ obj.per='数据连接'
 del obj.per
 """
 # ---------------------------------------------------------------
-# """
+"""
 class Pergination:
     def __init__(self,current_page):
         try:
@@ -61,11 +61,11 @@ for i in range(1000):
 while True:
     p = input('请输入要查看的页码：')
     nums = Pergination(p)
-    print(li[nums.start:nums.end])
- # """
+    print(li[nums.start+1:nums.end+1])
+ """
 # ---------------------------------------------------------------
 
-"""
+# """
 
 class Foo:
 
@@ -73,7 +73,7 @@ class Foo:
         return 123
 
     def f2(self,v):
-        print(v)
+        print('set num:%s'%v)
 
     def f3(self):
         print('del')
@@ -86,11 +86,12 @@ class Foo:
 
 
 obj = Foo()
-# ret = obj.per
-# print(ret)
 
-# obj.per = 123456
+ret = obj.per
+print(ret)
+
+obj.per = 123456
 
 del obj.per
 
-"""
+# """

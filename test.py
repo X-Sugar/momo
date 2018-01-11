@@ -207,22 +207,44 @@
 # server = FTPServer(("192.168.1.2",21),handler)
 # server.serve_forever()
 
-import pickle
+# import pickle
+#
+# class School:
+#     def __init__(self,name):
+#         self.name = name
+#
+#     def save(self):
+#         f=open('xxxx','wb')
+#         pickle.dump(self,f)
+#         f.close()
+#
+# s1 = School('shanghai')
+# s1.save()
+#
+# s2 = School('beijing')
+# s2.save()
+# import uuid
+# print(uuid.uuid1())
+# print(uuid.uuid1())
 
-class School:
-    def __init__(self,name):
-        self.name = name
+# import time
+#
+# print(time.ctime())
+# print(time.strftime('%Y-%m-%d %H:%M:%S'))
 
-    def save(self):
-        f=open('xxxx','wb')
-        pickle.dump(self,f)
-        f.close()
+# from collections import namedtuple
+# Point = namedtuple('Point',['x','y'])
+# p = Point(32,11)
+# print(p.x)
+# print(p.y)
+#
+# a = ['a','b','c']
+# from collections import deque
+# q = deque(a)
+# q.append('x')
+# q.appendleft('y')
+# print(q)
 
-s1 = School('shanghai')
-s1.save()
-
-s2 = School('beijing')
-s2.save()
-import uuid
-print(uuid.uuid1())
-print(uuid.uuid1())
+a = "cmd|ifconfig"
+print(a.split('|')[1])
+print(a.split('|',1))
