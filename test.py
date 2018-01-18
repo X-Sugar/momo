@@ -1,7 +1,4 @@
-# -*- coding=utf-8 -*-
-# _author: Administrator
-# Date: 2017/11/16 0016
-
+#coding:utf8
 # print('''\
 # Usage:thingy[OPTHONS]
 #     -h                  Display this usage message
@@ -245,6 +242,7 @@
 # q.appendleft('y')
 # print(q)
 
-a = "cmd|ifconfig"
-print(a.split('|')[1])
-print(a.split('|',1))
+# a = "cmd|ifconfig"
+# print(a.split('|')[1])
+# print(a.split('|',5))
+
