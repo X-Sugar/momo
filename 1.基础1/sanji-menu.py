@@ -50,7 +50,7 @@ while not back_flag and not exit_flag:
         while not back_flag and not exit_flag:
             for key2 in menu[choice]:
                 print(key2)
-            choice2 = input(">>>:").strip()
+            choice2 = input(">>>:").strip() # strip 去除两边空格
             if choice2 == "b":
                 back_flag = True
             if choice2 == "q":

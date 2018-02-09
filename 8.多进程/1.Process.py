@@ -1,78 +1,110 @@
-#coding:utf8
+# -*- coding:utf-8 -*-
 # _author: Administrator
-# Date: 2018/1/17 0017
+# Date: 2018/1/15 0015
 
-# window系统下，需要注意的是要想启动一个子进程，
-# 必须加上那句if __name__ == "main"，进程相关的要写在这句下面。
-
-# from multiprocessing import Process
+# 只适合Unix
+# import os
 #
-# import time
-#
-# def f(name):
-#     time.sleep(1)
-#     print('Hello!',name,time.ctime())
-#
-# if __name__ == '__main__':
-#     p_list=[]
-#     for i in range(3):
-#         p = Process(target=f,args=('susu',))
-#         p_list.append(p)
-#         p.start()
-#
-#     for p in p_list:
-#         p.join()
-#     print('End!')
-
-# ---------------------------------------------------------
-# 类式调用
+# print('Process (%s) start...' % os.getpid())
+# # Only works on Unix/Linux/Mac:
+# pid = os.fork()
+# if pid == 0:
+#     print('I am child process (%s) and my parent is %s.' % (os.getpid(), os.getppid()))
+# else:
+#     print('I (%s) just created a child process (%s).' % (os.getpid(), pid))
+# -----------------------------------------------------------
 
 # from multiprocessing import Process
-# import time
+# import os
 #
-# class MyProcess(Process):
-#     def __init__(self):
-#         # super(MyProcess,self).__init__()
-#         Process.__init__(self)
+# # 子进程要执行的代码
+# def run_proc(name):
+#     print('Run child process %s (%s)...' % (name, os.getpid()))
 #
-#     def run(self):
-#         time.sleep(1)
-#         print('Hello!',self.name,time.ctime())
-#
-# if __name__ == '__main__':
-#     p_list=[]
-#     for i in range(3):
-#         p = MyProcess()
-#         p.start()
-#         p_list.append(p)
-#
-#     for p in p_list:
-#         p.join()
-#
-#     print('End')
-
-# ----------------------------------------------------------------
-
-# from multiprocessing import Process
-# import os,time
-#
-# def info(title):
-#     print(title)
-#     print('module name:',__name__)
-#     print('parent process:',os.getppid())   # ppid父进程号
-#     print('process id:',os.getpid())    # pid子进程号
-#
-#
-# def f(name):
-#     info('\033[31;1mfunction f\033[0m')
-#     print('hello',name)
-#
-# if __name__ == '__main__':
-#     info('\033[32;1m main process line \033[0m')
-#     time.sleep(3)
-#     p = Process(target=info,args=('bob',))
+# if __name__=='__main__':
+#     print('Parent process %s.' % os.getpid())
+#     p = Process(target=run_proc, args=('test',))
+#     print('Child process will start.')
 #     p.start()
 #     p.join()
+#     print('Child process end.')
 
-# -------------------------------------------------------
+# -----------------------------------------------------------
 
+# import os
+#
+# from multiprocessing import Process
+#
+# class Proc(Process):
+#     def __init__(self,name):
+#         Process.__init__(self)
+#         self.name=name
+#     def run(self):
+#         print('Run child process %s (%s)...' % (self.name, os.getpid()))
+#
+# if __name__ == '__main__':
+#     print('Parent process %s.' % os.getpid())
+#     p = Proc('test')
+#     print('Child process will start.')
+#     p.start()
+#     p.join()    # join()方法可以等待子进程结束后再继续往下运行，通常用于进程间的同步。
+#     print('Child process end.')
+
+# -----------------------------------------------------------
+# 如果要启动大量的子进程，可以用进程池的方式批量创建子进程：
+
+# from multiprocessing import Pool
+# import os,time,random
+#
+# def long_time_task(name):
+#     print('Run task %s (%s)...' % (name,os.getpid()))
+#     start = time.time()
+#     time.sleep(random.random()*3)
+#     end = time.time()
+#     print('Task %s runs %0.2f seconds.' % (name,(end-start)))
+#
+# if __name__ == '__main__':
+#     print('Parent process %s.' % os.getpid())
+#     p = Pool(4)
+#     for i in range(5):
+#         p.apply_async(long_time_task,args=(i,))
+#     print('Waiting for all subprocess done...')
+#     p.close()
+#     p.join()
+#     print('All subprocess done.')
+# -----------------------------------------------------------
+
+# import subprocess
+#
+# print('$ nslookup www.python.org')
+# r = subprocess.call(['nslookup','www.python.org'])
+# print('Exit code:',r)
+
+# -----------------------------------------------------------
+
+from multiprocessing import Process,Queue
+import os,time,random
+
+def write(q):
+    print('Process to write:%s' % os.getpid())
+    for value in ['A','B','C']:
+        print('Put %s queue...' % value)
+        q.put(value)
+        time.sleep(random.random())
+
+def read(q):
+    print('Process to read:%s' % os.getpid())
+    while True:
+        value = q.get(True)
+        print('Get %s from queue.' % value)
+
+if __name__ == '__main__':
+    q = Queue()
+    pw = Process(target=write,args=(q,))
+    pr = Process(target=read,args=(q,))
+
+    pw.start()
+    pr.start()
+
+    pw.join()
+    pr.terminate()

@@ -26,7 +26,7 @@ price = [0,5800,9000,32,80,1500]
 while True:
     nums = input("请输入你要购买物品的序号：")
     if nums == "exit":
-        print("您的余额为：%d" % (salary))
+        print("您的余额为：%d" % salary)
         print("欢迎下次光临！")
         break
     num = int(nums)

@@ -40,14 +40,14 @@ while True:
     for key in menu:
         print(key)
     choice = input(">>>:").strip()
-    if len(choice) == 0:continue    #如果为空继续输入
+    if len(choice) == 0:continue    # 如果为空继续输入
     if choice in menu:
-        # back_menu = menu        #在改变之前赋值，为父层
+        # back_menu = menu        # 在改变之前赋值，为父层
         fu_menu.append(menu)
-        menu = menu[choice]     #改变menu值，变为子层
+        menu = menu[choice]     # 改变menu值，变为子层
     elif choice == "b":
-        # menu = back_menu        #把子层改为父层
+        # menu = back_menu        # 把子层改为父层
         if fu_menu:
-            menu = fu_menu.pop()    #删除最后一个值
+            menu = fu_menu.pop()    # 删除最后一个值
     else:
         print("无此项")

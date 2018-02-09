@@ -246,3 +246,43 @@
 # print(a.split('|')[1])
 # print(a.split('|',5))
 
+# for i in range(1,10):
+#     for j in range(1,1+i):
+#         print('%sx%s=%s' % (j,i,i*j),end='  ')
+#     print()
+
+# def f():
+#     print('OK')
+#     yield
+#
+# s=f()
+# next(s)
+
+# import pymysql
+#
+# conn = pymysql.connect(host='localhost',port=3306,user='root',password='xia0suba0',db='learn')
+# cursor = conn.cursor()
+#
+# cursor.execute("select * from learn.txt;")
+# b = cursor.fetchall()
+# print(b)
+#
+# cursor.close()
+# conn.close()
+
+# import pymysql
+# db = pymysql.connect(host='localhost',port=3306,user='root',password='xia0suba0',db='learn')
+# cursor = db .cursor()
+#
+# cursor.execute("select * from learn.txt")
+# b = cursor.fetchall()
+# print(b)
+#
+# db.close()
+
+questions = ['name', 'quest', 'favorite color']
+answers = ['lancelot', 'the holy grail', 'blue']
+
+for q, a in zip(questions, answers):
+    print('What is your {0}?  It is {1}.'.format(q, a))
+    print(q,a)
