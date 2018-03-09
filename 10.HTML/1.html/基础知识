@@ -1,0 +1,12 @@
+head标签：
+
+1.网站搬家，原链接跳转；网站定时刷新
+<meta http-equiv="refresh" content="2;url=https://www.baidu.com">
+
+2.浏览器兼容标签
+<meta http-equiv="X-UA-Compatible" content="IE-EmulateIE7" />
+
+3.网页图标
+<link rel="icon" href="http://www.jd.com/favicon.ico">
+
+4.

@@ -6,7 +6,7 @@ class HtmlParser(object):
     def parse(self, url, content, html_encode="utf-8"):
         if url is None or content is None:
             return
-        soup = BeautifulSoup(content, "html.parser", from_encoding=html_encode)
+        soup = BeautifulSoup(content, "1.html.parser", from_encoding=html_encode)
         new_urls = self._get_new_urls(url, soup)
         new_data = self._get_new_data(url, soup)
         return new_urls, new_data

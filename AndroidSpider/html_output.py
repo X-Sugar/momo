@@ -12,11 +12,11 @@ class HtmlOutput(object):
 
     def output_html(self):
         file_name = time.strftime("%Y-%m-%d_%H-%M-%S")
-        with open("out_%s.html" % file_name, "w", encoding='utf-8') as f_out:
-            f_out.write("<html>")
+        with open("out_%s.1.html" % file_name, "w", encoding='utf-8') as f_out:
+            f_out.write("<1.html>")
             f_out.write(r'<head>'
                         r'<link rel="stylesheet" '
-                        r'href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" '
+                        r'href="https://cdn.bootcss.com/bootstrap/3.3.7/2.css/bootstrap.min.2.css" '
                         r'integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" '
                         r'crossorigin="anonymous"></head>')
             f_out.write("<body>")
@@ -33,4 +33,4 @@ class HtmlOutput(object):
 
             f_out.write("</table>")
             f_out.write("</body>")
-            f_out.write("</html>")
+            f_out.write("</1.html>")
