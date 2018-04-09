@@ -37,7 +37,7 @@ st = 'hello kitty {name} is {age}'
 # print('My title title'.rfind('t'))  # 类似于 find()函数，不过是从右边开始查找.
 # print('My title title'.split('i',1))  # 以 str 为分隔符切片 string，如果 num有指定值，则仅分隔 num 个子字符串
 # print('My title title'.title())  # 返回"标题化"的 string,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())
-
+# print('ssssdfdf'.rpartition('d'))  # ('ssssdf', 'd', 'f'),已d为分隔，包含d
 
 # ----------------摘一些重要的字符串方法------------------------
 # print(st.count('l'))
@@ -50,6 +50,9 @@ st = 'hello kitty {name} is {age}'
 # print('\tMy tLtle\n'.strip())
 # print('My title title'.replace('itle','lesson',1))
 # print('My title title'.split('i',1))
+# print('sdfsdfsd\nsdfsdfsd\neiojiouj'.splitlines())
+# print('sdfsdfsdf'.startswith('s'))  # 判断是否以什么为开头
+# print('sdfsdfdfsdf'.endswith('f'))  # 判断是否以什么为结尾
 
 
 # ----------------------操作小例子---------------------------
