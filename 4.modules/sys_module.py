@@ -13,7 +13,7 @@ import sys
 #   3.
 # print(sys.version)  #获取python解释程序的版本信息
 #   4.
-# print(sys.platform)
+# print(sys.platform)   # 显示当前系统
 
 # 跨平台执行命令
 import os

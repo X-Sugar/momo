@@ -32,7 +32,7 @@ import re
 # ret=re.findall('a?b','aaaaaaaaabgefsdfggacb')
 # print(ret)
 
-#   { }
+#   {} x{n} 重复x n次;x{n,m} 重复x n-m次
 # ret=re.findall('a{5}b','aaaaaaaaabsdfdf')
 # print(ret)
 
@@ -128,19 +128,19 @@ import re
 # ret=re.match('asd','asdsdfsdasd')
 # print(ret.group())
 
-# 4   split()
+# 4   split()    切割
 # ret=re.split('s','jojusoijl')
 # ret=re.split('[k,s]','aewrsloikuj')
 # print(ret)
 
 # 4   sub()     #替换
-# ret=re.sub('a..x','s..b','sdfsdfaffxxfg')
+# ret=re.sub('a..x','ssbb','sdfsdfaffxxfg')
 # ret=re.sub('\d','xxx','sdf3sdf4',2)   #替换次数
 # print(ret)
 
 # 5   compile()
 # ret=re.compile('\.com')
-# rets=ret.findall('dfsdf.comserefsd')
+# rets=ret.findall('dfsdf.comsere.comfsd')
 # print(rets)
 
 

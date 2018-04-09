@@ -2,7 +2,7 @@
 # _author: Administrator
 # Date: 2017/10/30 0030
 
-#操作系统
+# 操作系统
 import os
 #   1.
 # print(os.name)  # 断现在正在实用的平台，Windows 返回 ‘nt'; Linux 返回’posix'

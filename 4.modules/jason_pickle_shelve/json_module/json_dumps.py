@@ -18,11 +18,11 @@
 # 写法更简单了
 import json
 
-dic={
-    'name':'susu',
-    'age':'18'
+dic = {
+    'name': 'susu',
+    'age': '18'
 }
 
-f=open('json_test2','w',encoding='utf8')
-json.dump(dic,f)
+f = open('json_test2','w',encoding='utf8')
+json.dump(dic, f)
 f.close()

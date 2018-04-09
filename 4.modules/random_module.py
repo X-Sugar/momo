@@ -31,12 +31,12 @@ print(random.sample('aaaabcdefgh',3))
 iteams = [1,2,3,4,5,6]
 random.shuffle(iteams)
 print(iteams)
-#五位随机验证码
+# 五位随机验证码
 def cod_num():
-    nums=''
-    lists=['!','@','#','%','&','*','?']
+    nums = ''
+    lists = ['!','@','#','%','&','*','?']
     for i in range(8):
-        add=random.choice([random.randrange(10),chr(random.randrange(65,91)),random.choice(lists)])
-        nums+=str(add)
+        add = random.choice([random.randrange(10),chr(random.randrange(65,91)),random.choice(lists)])
+        nums += str(add)
     print(nums)
 cod_num()

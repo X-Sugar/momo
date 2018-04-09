@@ -20,6 +20,6 @@ import json
 # print(data['name'])
 # f.close()
 
-with open('json_test2','r',encoding='utf8') as f:
-    data=json.load(f)
-    print(data['name'])
+with open('json_test2', 'r', encoding='utf8') as f:
+    data = json.load(f)
+    print(data['name'] )
