@@ -4,7 +4,6 @@
 
 a = ['susu','momo','lili','lucy','Cici']
 
-# print(a)
 
 # print(a[1:3])   #切片
 # print(a[1:])    #取到最后
@@ -33,21 +32,21 @@ a = ['susu','momo','lili','lucy','Cici']
 # a.pop() #不带参数，删除最后一个值
 
 #index 返回列表中第一个值为 x 的元素的索引。如果没有匹配的元素就会返回一个错误。
-print(a.index('lucy'))  #根据内容查找位置
+# print(a.index('lucy'))  #根据内容查找位置
 
-# a.reverse()
-# print(a)
+#统计次数
+# print(a.count('susu')) #列表中1出现的次数
 
+#排序
 # b = [2,3,4,6,8,12]
+# b.reverse()
+# print(b)
+
 # b.sort()    #升序
 # print(b)
 # b.reverse() #降序
 # print(b)
-
 # print(len(b))
-
-#统计次数
-# print(a.reverse(1)) #列表中1出现的次数
 
 # collections.deque 被设计用于快速地从两端操作
 # from collections import deque

@@ -1,7 +1,3 @@
-test = '二'
-print(test.isalnum())
-print(test.isdigit())
-print(test.isnumeric())
-
-a = ""
-print(a.isspace())
+a = [1,2,3,4,5]
+a.reverse()
+print(a)
