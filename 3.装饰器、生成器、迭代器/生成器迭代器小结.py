@@ -2,25 +2,25 @@
 # _author: Administrator
 # Date: 2017/10/27 0027
 
-#列表生成式
+# 列表生成式
 # [x*2 for x in range(10)]
 
-#生成器 （generator object）
+# 生成器 （generator object）
 
-    #创建生成器两种方式
-    #第一种
+    # 创建生成器两种方式
+    # 第一种
 # (x*2 for x in range(10))
-    #第二种
+    # 第二种
 # def f():
 #     yield
-# f()#这个就是生成器
+# f()   #这个就是生成器
 
-    #生成器调用方法
+    # 生成器调用方法
 
-#第一种
+# 第一种
 # next(f()) #计算出一个值
-        #注意：生成器在创建的时候已经决定了能计算的个数，超出则报错StopIteration
-        #遍历所有元素可以for循环
+        # 注意：生成器在创建的时候已经决定了能计算的个数，超出则报错StopIteration
+        # 遍历所有元素可以for循环
 # for i in [1,2,3]:
 #     print(i)
 

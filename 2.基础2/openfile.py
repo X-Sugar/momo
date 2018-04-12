@@ -1,4 +1,12 @@
 # -*- coding=utf-8 -*-
+# --------------read()和readline()以及readlines()用法区别 --------------
+
+# .read() 每次读取整个文件，它通常用于将文件内容放到一个字符串变量中
+# .readlines() 一次读取整个文件（类似于 .read()
+# .readlines() 自动将文件内容分析成一个行的列表，该列表可以由 Python 的 for ... in ... 结构进行处理.
+# .readline() 每次只读取一行，通常比 .readlines() 慢得多。仅当没有足够内存可以一次读取整个文件时，才应该使用 .readline()。
+
+# --------------------------------------------------------------------------
 
 # with open('江城子2','a',encoding='utf8') as g:
 #     g.truncate(2)
@@ -13,8 +21,8 @@
 #     num=0
 #     for i in f:
 #         num+=1
-#         if num == 2:+
-
+#         if num == 2:
+#
 #            i=''.join([i.strip(),'uuuuuuuuuuu\n'])
 #         g.write(i)
 ##################################################################
@@ -91,3 +99,4 @@
 #     for line in f_read:
 #         f_write.write(line)
 # # f = open()
+

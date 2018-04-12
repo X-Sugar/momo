@@ -29,11 +29,11 @@ import os
 #   10
 # print(os.path.split(os.path.abspath(__file__))) # 返回路径的目录和文件名
 #   11
-# os.system("echo 'hello world'") # 执行shell命令
+os.system("echo 'hello world'") # 执行shell命令
 # 此处运行shell命令时，如果要调用python之前的变量，可以用如下方式：
-# var=123
-# os.environ['var']=str(var) # 注意此处[]内得是 “字符串”
-# os.system('echo $var')
+var=123
+os.environ['var']=str(var) # 注意此处[]内得是 “字符串”
+os.system('echo $var')
 #   12
 # os.chdir(r'c://Users')  # 改变目录到指定目录
 # print(os.getcwd())

@@ -61,3 +61,9 @@ st = 'hello kitty {name} is {age}'
 # test = '你是风儿我是沙'
 # v = "_".join(test)
 # print(v)
+
+# 字符串拼接
+a = '111sdfsdf'
+b = '333233'
+c = ','.join([a,b])
+print(c)
