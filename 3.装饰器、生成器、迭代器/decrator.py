@@ -23,30 +23,32 @@ def foo():
     time.sleep(2)
 foo()
 
-@show_time
-def bar():
-    print('bar......')
-    time.sleep(3)
-bar()
-# ######################################################
-def aa(cc):
-    def dd():
-        print('xxxxxxxxxx')
-        cc()
-    return dd
-@aa
-def bb():
-    print('--------------')
-bb()
-# #####################################################
-def printdebug(func):
-    def __decorator(user):  # add parameter receive the user information
-        print('enter the login')
-        func(user)  # pass user to login
-        print('exit the login')
-    return __decorator
+# @show_time
+# def bar():
+#     print('bar......')
+#     time.sleep(3)
+# bar()
 
-@printdebug
-def login(user):
-    print('in login:' + user)
-login('jatsz')
+
+# # ######################################################
+# def aa(cc):
+#     def dd():
+#         print('xxxxxxxxxx')
+#         cc()
+#     return dd
+# @aa
+# def bb():
+#     print('--------------')
+# bb()
+# # #####################################################
+# def printdebug(func):
+#     def __decorator(user):  # add parameter receive the user information
+#         print('enter the login')
+#         func(user)  # pass user to login
+#         print('exit the login')
+#     return __decorator
+#
+# @printdebug
+# def login(user):
+#     print('in login:' + user)
+# login('jatsz')

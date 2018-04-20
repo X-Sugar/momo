@@ -1,3 +1,13 @@
-a = [1,2,3,4,5]
-a.reverse()
-print(a)
+def a():
+    print('a')
+
+def b():
+    print('b')
+
+def sum():
+    a()
+    b()
+
+
+
+

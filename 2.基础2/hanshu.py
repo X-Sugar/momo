@@ -1,6 +1,6 @@
 # -*- coding=utf-8 -*-
 
-#闭包函数
+# 闭包函数
 
 # def outer():
 #     x=10
@@ -11,7 +11,7 @@
 # f=outer()
 # f()
 
-#装饰器
+# 装饰器
 # import time
 # def show_time(f):
 #     def inner():
@@ -27,7 +27,7 @@
 #     time.sleep(2)
 # foo()
 
-#装饰起带参数
+# 装饰带参数
 
 # import time
 # def show_time(f):
@@ -43,7 +43,7 @@
 #     time.sleep(1)
 # foo(2,3)
 
-#多个参数
+# 多个参数
 
 # import time
 # def show_time(f):
@@ -62,7 +62,7 @@
 #     time.sleep(1)
 # foo(2,3,4)
 
-#装饰器加参数
+# 装饰器加参数
 
 # import time
 # def logger(flag):
@@ -115,9 +115,55 @@
 #
 # print(i)
 
-a=[lambda :x for x in range(10)]
-print(a[0]())
+# a=[lambda :x for x in range(10)]
+# print(a[0]())
 
 # a = 3
 # b = [a + i for i in range(10)]
 # print(b)
+
+
+# -----------------------不定长参数------------------------
+# *args:接收N个位置参数，转换成元组形式
+
+# def test(*args):
+#     print(args)
+#
+# test(1,2,3,4,5)
+# test(*[1,2,3,4,5])
+# 执行时args = tuple([1,2,3,4,5])
+
+# def test1(x,*args):
+#     print(x)
+#     print(args)
+#
+# test1(1,2,3,4,5,6,7)
+
+# **kwargs:接收N个关键字参数，转换成字典方式
+
+# def test2(**kwargs):
+#     print(kwargs)
+#     print(kwargs['name'])
+#     print(kwargs['age'])
+#     print(kwargs['sex'])
+#
+# test2(name='alex', age=8, sex='male')
+# test2(**{'name':'alex', 'age':'22', 'sex':'male'})
+
+# def test3(name, **kwargs):
+#     print(name)
+#     print(kwargs)
+#
+# test3('alex',age=8, sex='male')
+
+def test4(name, age=18, *args, **kwargs):
+    print(name)
+    print(age)
+    print(args)
+    print(kwargs)
+    logger('TEST4')
+
+def logger(source):
+    print('from %s' % source)
+
+test4('alex', age=34, sex='male',hobby='tesla')
