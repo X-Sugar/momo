@@ -1,13 +1,7 @@
-def a():
-    print('a')
+t = range(4)
 
-def b():
-    print('b')
+t1 = (i for i in t)
+t2 = (i for i in t1)
 
-def sum():
-    a()
-    b()
-
-
-
-
+print(list(t1))
+print(list(t2))

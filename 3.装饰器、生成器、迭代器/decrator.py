@@ -13,7 +13,7 @@ def show_time(f):
         start = time.time()
         f()
         end = time.time()
-        print('spend %s' % (start - end))
+        print('spend %s' % (end - start))
     return inner
 
 @show_time

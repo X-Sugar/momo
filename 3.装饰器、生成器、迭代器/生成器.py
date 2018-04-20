@@ -8,7 +8,7 @@ s=(x for x in range(1,11))
 # print(next(s))
 # print(next(s))
 
-#生成器就是一个可迭代对象（）iterable
+# 生成器就是一个可迭代对象（）iterable
 
 # for i in s:
 #     print(i,end=" ")
