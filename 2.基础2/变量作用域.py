@@ -47,7 +47,7 @@ def fun1():
     print(num)
 fun1()
 
-# 如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了，如下实例：
+# 如果要修改嵌套作用域（enclosing 作用域，0外层非全局作用域）中的变量则需要 nonlocal 关键字了，如下实例：
 
 def outer():
     num = 10

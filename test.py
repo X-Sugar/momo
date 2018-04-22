@@ -1,3 +1,7 @@
-a = [1,2,3,4,5]
-a.reverse()
-print(a)
+t = range(4)
+
+t1 = (i for i in t)
+t2 = (i for i in t1)
+
+print(list(t1))
+print(list(t2))

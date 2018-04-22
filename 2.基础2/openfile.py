@@ -1,4 +1,9 @@
 # -*- coding=utf-8 -*-
+
+# f = open('江城子','rb') # rb 以二进制的方式打开文件，b方式不能指定编码
+# data = f.read()
+# print(data.decode('utf8'))
+
 # --------------read()和readline()以及readlines()用法区别 --------------
 
 # .read() 每次读取整个文件，它通常用于将文件内容放到一个字符串变量中
@@ -100,3 +105,7 @@
 #         f_write.write(line)
 # # f = open()
 
+# seek
+# with open('江城子','r',encoding='utf8') as f:
+#     f.seek(9)
+#     print(f.readline())
