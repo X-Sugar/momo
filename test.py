@@ -1,7 +1,12 @@
-t = range(4)
+import time
 
-t1 = (i for i in t)
-t2 = (i for i in t1)
+def show_time():
+    def inner():
+        start = time.time()
+        time.sleep(1)
+        end = time.time()
+        print('spend %s' % (end - start))
+    # return inner
+    print(inner)
 
-print(list(t1))
-print(list(t2))
+show_time()
