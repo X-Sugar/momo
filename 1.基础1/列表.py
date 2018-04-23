@@ -64,3 +64,10 @@ a = ['susu','momo','lili','lucy','Cici']
 # print(a)
 
 # print(list(zip(*mart)))   #方法2 推荐
+
+
+# 取第一个和最后一个值
+List=[1,2,3,4,5,6]
+A,*_,C = List
+print(C)
+print(A)

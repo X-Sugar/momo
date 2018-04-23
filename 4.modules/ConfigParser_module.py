@@ -27,6 +27,10 @@ config = configparser.ConfigParser()
 # with open('config.ini', 'w') as configfile:
 #     config.write(configfile)
 
+config.read('config.ini')  # 加载文件
+print(config.items('DEFAULT'))  # 获取指定 section 的 keys & values
+print(config.get('DEFAULT','serveracion'))  # 获取指定 section 的 keys
+
 # 删除
 # config.read('config.ini')
 # config.remove_section('luzhuo.me')  #删除
@@ -35,6 +39,6 @@ config = configparser.ConfigParser()
 # config.add_section('server.com')    #添加
 # config.write(open('config.ini','a+'))   #添加
 # 修改/添加
-config.read('config.ini')   # 必须先读文件获取section
-config.set('mysql','port','1111')   # 修改或者添加值
-config.write(open('config.ini','w'))    # 写入
+# config.read('config.ini')   # 必须先读文件获取section
+# config.set('mysql','port','1111')   # 修改或者添加值
+# config.write(open('config.ini','w'))    # 写入
