@@ -43,4 +43,4 @@ if __name__ == '__main__':
             res=msg_dic[choice]
             res()
         else:
-            print('error')
+            print('输入错误，请重新输入！')
