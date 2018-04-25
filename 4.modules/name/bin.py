@@ -2,8 +2,10 @@
 # _author: Administrator
 # Date: 2017/11/15 0015
 
-import foo
+import os,sys
+dirname = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(dirname)
+print(dirname)
 
-foo.hello()
 
-print(__name__)
+# foo.hello()

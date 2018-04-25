@@ -9,13 +9,13 @@ st = 'hello kitty {name} is {age}'
 # print(st.count('l'))       #  统计元素个数
 # print(st.capitalize())     #  首字母大写
 # print(st.center(50,'#'))   #  居中
-# print(st.endswith('tty3')) #  判断是否以某个内容结尾
-# print(st.startswith('he')) #  判断是否以某个内容开头
+# print(st.endswith('tty3')) #  判断是否以某个内容结尾，结果为布尔值
+# print(st.startswith('he')) #  判断是否以某个内容开头，结果为布尔值
 # print(st.expandtabs(tabsize=20))  # 把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8。
 # print(st.find('t'))        #  查找到第一个元素，并将索引值返回
 # print(st.format(name='alex',age=37))  # 格式化输出的另一种方式   待定：?:{}
 # print(st.format_map({'name':'alex','age':22}))
-# print(st.index('t'))
+# print(st.index('t')) # 所在位置
 # print('asd'.isalnum())    # 如果 string 至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False
 # print('addf'.isalpha())   # 如果 string 至少有一个字符并且所有字符都是字母则返回 True,否则返回 False
 # print('12632178'.isdecimal())  # 如果 string 只包含十进制数字则返回 True 否则返回 False.
@@ -63,7 +63,7 @@ st = 'hello kitty {name} is {age}'
 # print(v)
 
 # 字符串拼接
-a = '111sdfsdf'
-b = '333233'
-c = ','.join([a,b])
-print(c)
+# a = '111sdfsdf'
+# b = '333233'
+# c = ','.join([a,b])
+# print(c)
