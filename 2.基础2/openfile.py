@@ -109,3 +109,11 @@
 # with open('江城子','r',encoding='utf8') as f:
 #     f.seek(9)
 #     print(f.readline())
+
+
+# 根据条件匹配输入内容
+with open('江城子','r',encoding='utf8') as f:
+    for i in f.readlines():
+        # print(i.strip())
+        if i.startswith('料'):
+            print(i)

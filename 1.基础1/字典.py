@@ -181,7 +181,7 @@ print(dic5)
 #     "k2": 'v2'
 # }
 # 1 根据序列，创建字典，并指定统一的值
-# v = dict.fromkeys(["k1",123,"999"],123)
+# v = dict.fromkeys(["k1",123,"learn"],123)
 # print(v)
 
 # 2 根据Key获取值，key不存在时，可以指定默认值（None）

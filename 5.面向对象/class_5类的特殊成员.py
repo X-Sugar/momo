@@ -149,7 +149,7 @@ print(r)
 
 li[100] = 'susu' # 100 = key  susu = value
 
-del li[999]
+del li[learn]
 """
 
 
