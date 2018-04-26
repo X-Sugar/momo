@@ -2,7 +2,7 @@
 # _author: Administrator
 # Date: 2017/10/30 0030
 
-#python解释器交互
+# python解释器交互
 import sys
 
 #   1.
@@ -27,3 +27,12 @@ import os
 # print(sys.path)   #path是一个目录列表，供Python从中查找第三方扩展模块
 #   6
 # print(sys.builtin_module_names) # 返回一个列表，包含内建模块的名字
+
+
+# 进度条
+# import os,sys,time
+#
+# for i in range(100):
+#     sys.stdout.write('#')
+#     time.sleep(0.1)
+#     sys.stdout.flush()  # 刷新
