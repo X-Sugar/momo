@@ -42,7 +42,7 @@ os.system('echo $var')
 #   14
 # print(os.path.abspath())    # 获取绝对路径
 #   15
-# print(os.path.join(r'c:\Users',r'os_module.py'))   # 连接目录和文件名
+# print(os.path.join(r'c:\Users',r'os_module.py'))   # 连接目录和文件名,路径拼接
 #   16
 # print(os.path.basename('e:/momo/os_module.py'))  # 返回文件名
 #   17

@@ -6,8 +6,11 @@ import pickle
 
 dic={'name':'susu','age':'18'}
 
-data=pickle.dumps(dic)
-f=open('pickle_test','wb')
-f.write(data)
-f.close()
+# data=pickle.dumps(dic)
+# f=open('pickle_test','wb')
+# f.write(data)
+# f.close()
 #  ##############################################
+
+with open('pickle_test','wb') as f:
+    pickle.dump(dic,f)
