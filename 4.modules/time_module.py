@@ -9,12 +9,15 @@ import time
 # print(time.time())  #1509023231.7808106 时间戳
 # time.sleep(3)
 # print(time.clock()) #计算cpu执行的时间
-# print(time.gmtime())  #UTC时间
+# print(time.gmtime())  #UTC时间,世界标准时间
 # print(time.localtime()) #本地时间
+# a = time.localtime()
+# print(a.tm_year)
+
 # print(help(time.strftime))
-print(time.strftime('%Y-%m-%d %H:%M:%S'))   #字符串时间
+# print(time.strftime('%Y-%m-%d %H:%M:%S'))   # 字符串时间 2018-04-25 22:22:48
 #
-# print(time.strptime('2017-10-26 21:34:51','%Y-%m-%d %H:%M:%S'))
+print(time.strptime('2017-10-26 21:34:51','%Y-%m-%d %H:%M:%S'))  # time.struct_time(tm_year=2017, tm_mon=10, tm_mday=26, tm_hour=21, tm_min=34, tm_sec=51, tm_wday=3, tm_yday=299, tm_isdst=-1)
 # a=time.strptime ('2017-10-26 21:34:51','%Y-%m-%d %H:%M:%S')
 # print(a.tm_year)
 # print(a.tm_mon)
