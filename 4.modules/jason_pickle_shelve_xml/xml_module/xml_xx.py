@@ -16,16 +16,8 @@ for child in root:
         print(i.tag,i.text)
 
 # 只遍历指定节点
-# -----------------------------------------
 # for node in root.iter('year'):
 #     print(node.tag,node.text)
-
-# ---------------------------------------
-
-# import xml.etree.ElementTree as ET
-#
-# tree = ET.parse("xmltest.xml")
-# root = tree.getroot()
 
 # 修改
 # for node in root.iter('year'):
