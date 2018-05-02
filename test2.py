@@ -1,8 +1,11 @@
-import re
+import socket
 
-sfz = ['360730199102013225','360730198902013225','360730199002013225']
+sk = socket.socket()
+sk.connect(("127.0.0.1",8888))
 
-for i in sfz:
-    ret = re.findall('^\d{6}1990\d{8}$',i)
-    if ret:
-        print(ret[0])
+send_data = input("输入发送内容：")
+sk.sendall(bytes(send_data,encoding='utf8'))
+
+accept_data = sk.recv(1024)
+print(str(accept_data,encoding='utf8'))
+sk.close()

@@ -1,46 +1,20 @@
-def login():
-    print('这是登陆功能！')
+import socket
 
+sk = socket.socket()
 
-def select():
-    print('这是查询功能！')
+sk.bind(('127.0.0.1',8888))
+sk.listen(5)
 
+conn,addr = sk.accept()
 
-def update():
-    print('这是更新功能！')
+print(conn)
+print(addr)
 
+acccep_data = conn.recv(1024)
+acccep_data2 = str(acccep_data,encoding='utf8')
 
-def delete():
-    print('这是删除功能！')
+print(acccep_data2,str(addr[1]))
 
-
-def exit():
-    print('这是退出功能！')
-
-
-if __name__ == '__main__':
-    msg='''
-        1.登陆
-        2.查询
-        3.更新
-        4.删除
-        5.退出
-    '''
-    msg_dic={
-        '1':login,
-        '2':select,
-        '3':update,
-        '4':delete,
-        '5':exit
-    }
-
-    while True:
-        print(msg)
-        choice = input('请输入你的选项：').strip()
-        if not choice:continue
-        if choice == '5':break
-        if choice in msg_dic:
-            res=msg_dic[choice]
-            res()
-        else:
-            print('输入错误，请重新输入！')
+send_data = input('请输入发送的内容：')
+conn.sendall(bytes(send_data,encoding='utf8'))
+conn.close()
