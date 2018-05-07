@@ -27,5 +27,4 @@ while True:
         conn.send(bytes(send_data,'utf8'))
         if send_data == 'exit':
             break
-
-sk.close()
+    sk.close()

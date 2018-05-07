@@ -1,20 +1,36 @@
-import socket
+# -*- coding=utf-8 -*-
+# _author: Administrator
+# Date: 2017/12/19 0019
+
+# 一直通信
+import socket,subprocess
 
 sk = socket.socket()
-
 sk.bind(('127.0.0.1',8888))
-sk.listen(5)
+sk.listen(3)
 
-conn,addr = sk.accept()
+while True:
+    conn,addr = sk.accept()
+    while True:
+        try:
+            recv_data = str(conn.recv(1024),'utf8')
+        except Exception:
+            break
+        if not recv_data:
+            conn.close()
+            conn,addr = sk.accept()
+            print("新的请求地址：%s" % str(addr))
+            continue
+        print("接收命令：%s 地址：%s" % (recv_data,addr))
 
-print(conn)
-print(addr)
+        obj = subprocess.Popen(recv_data,shell=True,stdout=subprocess.PIPE)
+        send_data = obj.stdout.read()
 
-acccep_data = conn.recv(1024)
-acccep_data2 = str(acccep_data,encoding='utf8')
+        send_len = bytes(str(len(send_data)),'utf8')
+        conn.send(send_len)
 
-print(acccep_data2,str(addr[1]))
+        conn.recv(1024)
 
-send_data = input('请输入发送的内容：')
-conn.sendall(bytes(send_data,encoding='utf8'))
-conn.close()
+        conn.send(send_data)
+
+    sk.close()
