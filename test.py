@@ -1,20 +1,34 @@
-import socket
+import threading
+import time
 
-sk = socket.socket()
+exitFlag = 0
 
-sk.bind(('127.0.0.1',8888))
-sk.listen(5)
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+    def run(self):
+        print("开始线程：" + self.name)
+        print_time(self.name, self.counter, 5)
+        print("退出线程：" + self.name)
 
-conn,addr = sk.accept()
+def print_time(threadName, delay, counter):
+    while counter:
+        if exitFlag:
+            threadName.exit()
+        time.sleep(delay)
+        print("%s: %s" % (threadName, time.ctime(time.time())))
+        counter -= 1
 
-print(conn)
-print(addr)
+# 创建新线程
+thread1 = myThread(1, "Thread-1", 1)
+thread2 = myThread(2, "Thread-2", 2)
 
-acccep_data = conn.recv(1024)
-acccep_data2 = str(acccep_data,encoding='utf8')
-
-print(acccep_data2,str(addr[1]))
-
-send_data = input('请输入发送的内容：')
-conn.sendall(bytes(send_data,encoding='utf8'))
-conn.close()
+# 开启新线程
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+print("退出主线程")

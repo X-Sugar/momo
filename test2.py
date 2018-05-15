@@ -1,11 +1,26 @@
+# -*- coding=utf-8 -*-
+# _author: Administrator
+# Date: 2017/12/20 0020
+
 import socket
 
 sk = socket.socket()
-sk.connect(("127.0.0.1",8888))
+sk.connect(('127.0.0.1',8888))
 
-send_data = input("输入发送内容：")
-sk.sendall(bytes(send_data,encoding='utf8'))
+while True:
+    send_data = input('输入发送内容：')
+    if send_data == 'exit':
+        break
+    sk.send(bytes(send_data, 'utf8'))
 
-accept_data = sk.recv(1024)
-print(str(accept_data,encoding='utf8'))
+    recv_len = int(str(sk.recv(1024),'utf8'))
+
+    sk.sendall(bytes('OK',encoding='utf8'))     # 隔断，解决粘包
+    print('命令字节大小：%s' % recv_len)
+
+    recv_data = bytes()
+    while len(recv_data) != recv_len:
+        recv = sk.recv(1024)
+        recv_data += recv
+    print(str(recv_data,'gbk'))
 sk.close()
