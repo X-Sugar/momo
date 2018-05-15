@@ -8,7 +8,7 @@
 # 对于某一时间只能让一个线程操作的语句放到 RLock的acquire 方法 和 release方法之间。
 # 即 acquire()方法相当于给RLock 锁  上锁，而 release() 相当于解锁。
 
-import threading,time
+import threading
 
 x = 0
 lock = threading.RLock()
@@ -16,6 +16,7 @@ lock = threading.RLock()
 # 这两种琐的主要区别是：RLock允许在同一线程中被多次acquire。而Lock却不允许这种情况。
 # 注意：如果使用RLock，那么acquire和release必须成对出现，
 # 即调用了n次acquire，必须调用n次的release才能真正释放所占用的琐。
+
 
 class mythread(threading.Thread):
     def run(self):
@@ -25,11 +26,14 @@ class mythread(threading.Thread):
         print(self.name,x)
         lock.release()  # 解锁
 
+
 def main():
     l = []
     for i in range(5):
         l.append(mythread())    # 创建 5 个线程，并把他们放到一个列表中
     for i in l:
         i.start()   # 开启列表中的所有线程
+
+
 if __name__ == '__main__':
     main()

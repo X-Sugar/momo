@@ -1,36 +1,34 @@
-# -*- coding=utf-8 -*-
-# _author: Administrator
-# Date: 2017/12/19 0019
+import threading
+import time
 
-# 一直通信
-import socket,subprocess
+exitFlag = 0
 
-sk = socket.socket()
-sk.bind(('127.0.0.1',8888))
-sk.listen(3)
+class myThread (threading.Thread):
+    def __init__(self, threadID, name, counter):
+        threading.Thread.__init__(self)
+        self.threadID = threadID
+        self.name = name
+        self.counter = counter
+    def run(self):
+        print("开始线程：" + self.name)
+        print_time(self.name, self.counter, 5)
+        print("退出线程：" + self.name)
 
-while True:
-    conn,addr = sk.accept()
-    while True:
-        try:
-            recv_data = str(conn.recv(1024),'utf8')
-        except Exception:
-            break
-        if not recv_data:
-            conn.close()
-            conn,addr = sk.accept()
-            print("新的请求地址：%s" % str(addr))
-            continue
-        print("接收命令：%s 地址：%s" % (recv_data,addr))
+def print_time(threadName, delay, counter):
+    while counter:
+        if exitFlag:
+            threadName.exit()
+        time.sleep(delay)
+        print("%s: %s" % (threadName, time.ctime(time.time())))
+        counter -= 1
 
-        obj = subprocess.Popen(recv_data,shell=True,stdout=subprocess.PIPE)
-        send_data = obj.stdout.read()
+# 创建新线程
+thread1 = myThread(1, "Thread-1", 1)
+thread2 = myThread(2, "Thread-2", 2)
 
-        send_len = bytes(str(len(send_data)),'utf8')
-        conn.send(send_len)
-
-        conn.recv(1024)
-
-        conn.send(send_data)
-
-    sk.close()
+# 开启新线程
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+print("退出主线程")

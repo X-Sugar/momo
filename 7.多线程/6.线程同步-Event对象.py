@@ -21,6 +21,7 @@ class Mon(threading.Thread):
         Dinner.set()    # 标志设置为True
         print(self.name,":dinner is OK!")
 
+
 class Son(threading.Thread):
     def run(self):
         while True:
@@ -31,6 +32,7 @@ class Son(threading.Thread):
                 Dinner.wait(1)
         print(self.name,':Eating Dinner')
 
+
 def main():
     mon = Mon()
     son = Son()
@@ -38,6 +40,7 @@ def main():
     son.name = 'Son'
     mon.start()
     son.start()
+
 
 if __name__ == '__main__':
     Dinner = threading.Event()
