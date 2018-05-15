@@ -32,6 +32,7 @@ iteams = [1,2,3,4,5,6]
 random.shuffle(iteams)
 print(iteams)
 # 五位随机验证码
+# (65, 91)所有大写字母(97, 123)所有小写字母(48, 58)所有数字
 def cod_num():
     nums = ''
     lists = ['!','@','#','%','&','*','?']
